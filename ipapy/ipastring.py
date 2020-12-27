@@ -226,6 +226,36 @@ class IPAString(MutableSequence):
         return IPAString(ipa_chars=[c for c in self.ipa_chars if c.is_consonant])
 
     @property
+    def consonants_n(self):
+        """
+        Return a new IPAString, containing consonants part in the current string.
+
+        :rtype: IPAString
+        """
+        v_i = 0
+        for i, c in enumerate(self.ipa_chars):
+            if c.is_vowel:
+                v_i = i
+                break
+        consonants = [t for t in self.ipa_chars[:v_i] if t.is_vowel or t.is_consonant]
+        return IPAString(ipa_chars=consonants)
+
+    @property
+    def vowels_n(self):
+        """
+        Return a new IPAString, containing vowels part in the current string.
+
+        :rtype: IPAString
+        """
+        v_i = 0
+        for i, c in enumerate(self.ipa_chars):
+            if c.is_vowel:
+                v_i = i
+                break
+        vowels = [t for t in self.ipa_chars[v_i:] if t.is_vowel or t.is_consonant]
+        return IPAString(ipa_chars=vowels)
+
+    @property
     def vowels(self):
         """
         Return a new IPAString, containing only the vowels in the current string.

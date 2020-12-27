@@ -562,7 +562,18 @@ open      central       rounded vowel,0252_0308 0276_0308 0276_0320
 open      back        unrounded vowel,0251
 open      back          rounded vowel,0252
 
+# manually added - vowel
+# ẽ
+close-mid front       unrounded vowel,1EBD
+# i
+close-mid front       unrounded vowel,0129
+# ỹ
+close-mid front       unrounded vowel,1EF9
 
+# manually added - consonant
+# xjb written description
+# ȵ
+voiced    bilabial          nasal consonant,0235
 
 
 
